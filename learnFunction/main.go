@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"learnFunction/quiz"
+)
 
 func main() {
 	printMyResult()
@@ -18,6 +21,42 @@ func main() {
 
 	luas, keliling = calculatePredefined(10, 20)
 	fmt.Println("Predefined: Luas:", luas, ", Keliling:", keliling)
+
+	//	TODO: run Sum and Calculate
+	numbers := []int{1, 2, 3, 4, 5, 6, 7}
+	sum := quiz.Sum(numbers)
+	fmt.Println("sum:", sum)
+	calculate, err := quiz.Calculate(10, 5, "+")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(`calculate 10 + 5:`, calculate)
+	calculate, err = quiz.Calculate(10, 5, "-")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(`calculate 10 - 5:`, calculate)
+	calculate, err = quiz.Calculate(10, 5, "*")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(`calculate 10 * 5:`, calculate)
+	calculate, err = quiz.Calculate(10, 5, "/")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(`calculate 10 / 5:`, calculate)
+
+	calculate, err = quiz.Calculate(10, 5, "s")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(`calculate 10 - 5:`, calculate)
 }
 
 //simple function tanpa input
