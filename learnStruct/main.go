@@ -2,15 +2,6 @@ package main
 
 import "fmt"
 
-//mirip dengan struktur table user
-type User struct {
-	ID        int
-	FirstName string
-	LastName  string
-	email     string
-	IsActive  bool
-}
-
 func main() {
 	//basic initiate user
 	//jika kosong, maka diisi dengan default value tiap tipe data
@@ -48,11 +39,15 @@ func main() {
 	fmt.Println(display)
 	fmt.Println(display1)
 	fmt.Println(display2)
-}
 
-func displayUser(user User) string {
-	//Sprintf mengembalikan string yang telah diformat
-	//TODO: explore more about this
-	result := fmt.Sprintf("Name: %s %s, Email: %s", user.FirstName, user.LastName, user.LastName)
-	return result
+	//	Embeded struct
+	users := []User{user1, user2}
+	group := Group{"Gamer", user, users, true}
+
+	displayGroup(group)
+
+	//	cara penggunaan method:
+	fmt.Println("Print user dengan method")
+	fmt.Println(user.display())
+	fmt.Println(user1.display())
 }
