@@ -50,4 +50,8 @@ func main() {
 	fmt.Println("Print user dengan method")
 	fmt.Println(user.display())
 	fmt.Println(user1.display())
+
+	//	quiz: akses displayGroup lewat method
+	fmt.Println("Display Group dengan method")
+	group.display()
 }

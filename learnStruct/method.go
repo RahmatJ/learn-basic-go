@@ -31,6 +31,17 @@ type Group struct {
 	IsAvailable bool
 }
 
+func (group Group) display() {
+	//printf akan mencetak formatted string
+	fmt.Printf("Name: %s\n", group.Name)
+	fmt.Printf("Member Count: %d\n", len(group.Users))
+	//	loop for display all users
+	fmt.Println("Users: ")
+	for _, user := range group.Users {
+		fmt.Println(displayUser(user))
+	}
+}
+
 func displayGroup(group Group) {
 	//printf akan mencetak formatted string
 	fmt.Printf("Name: %s\n", group.Name)
